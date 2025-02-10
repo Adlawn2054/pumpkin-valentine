@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="valentine.css">
+    <title>Will you be my valentine?</title>
+</head>
+<body>
+    <form action="#" onsubmit="submitForm(event)">
+        <div class="container">
+            <h1>Happy Valentine's Day!</h1>
+            <label for="name">Please Enter Your Name:</label>
+            <input type="text" name="name" id="name" required>
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+
+    <div class="heart">❤️</div>
+
+    <!-- Popup Container -->
+    <div class="popup" id="popup">
+        <h2>Who are you😤!!! Why are you here?.</h2>
+        <p>You're not my Puumpkiin🤔😡😤!!!.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            if (name.toLowerCase() === 'Jazi' || 'jazi') {
+                window.location.href = "valentine.html";
+            } else {
+                showPopup();
+            }
+        }
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
